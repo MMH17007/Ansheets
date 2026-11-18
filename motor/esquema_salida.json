@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Respuesta del motor de Ansheets",
+  "type": "object",
+  "required": ["tipo", "idioma", "mensaje"],
+  "additionalProperties": false,
+  "properties": {
+    "tipo": { "type": "string", "enum": ["hoja", "aclaracion", "fuera_de_tema"] },
+    "idioma": { "type": "string", "enum": ["es", "en"] },
+    "mensaje": { "type": "string", "maxLength": 220 },
+    "hoja": {
+      "type": "object",
+      "required": ["titulo", "moneda", "columnas", "filas", "totales", "filas_vacias"],
+      "additionalProperties": false,
+      "properties": {
+        "titulo": { "type": "string", "maxLength": 80 },
+        "moneda": { "type": "string", "enum": ["EUR", "USD", "GBP"] },
+        "columnas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 15,
+          "items": {
+            "type": "object",
+            "required": ["nombre", "tipo"],
+            "additionalProperties": false,
+            "properties": {
+              "nombre": { "type": "string", "maxLength": 40 },
+              "tipo": { "type": "string", "enum": ["texto", "numero", "moneda", "fecha", "porcentaje"] },
+              "formula": { "type": "string", "maxLength": 300 }
+            }
+          }
+        },
+        "filas": {
+          "type": "array",
+          "maxItems": 200,
+          "items": {
+            "type": "array",
+            "items": { "type": ["string", "number", "null"] }
+          }
+        },
+        "totales": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["columna", "funcion"],
+            "additionalProperties": false,
+            "properties": {
+              "columna": { "type": "string" },
+              "funcion": { "type": "string", "enum": ["SUM", "AVERAGE", "MIN", "MAX", "COUNT"] }
+            }
+          }
+        },
+        "filas_vacias": { "type": "integer", "minimum": 0, "maximum": 50 }
+      }
+    }
+  }
+}

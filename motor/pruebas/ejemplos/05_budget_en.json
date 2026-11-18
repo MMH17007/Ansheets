@@ -1,0 +1,87 @@
+{
+ "peticion": "Monthly budget vs actual: rent 1200/1200, groceries 400/452.30, transport 150/98, leisure 200/260",
+ "respuesta": {
+  "tipo": "hoja",
+  "idioma": "en",
+  "mensaje": "Here's your budget vs actual, with the difference and % used per category.",
+  "hoja": {
+   "titulo": "Monthly budget",
+   "moneda": "USD",
+   "filas_vacias": 0,
+   "columnas": [
+    {
+     "nombre": "Category",
+     "tipo": "texto"
+    },
+    {
+     "nombre": "Budgeted",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Actual",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Difference",
+     "tipo": "moneda",
+     "formula": "=[Budgeted]-[Actual]"
+    },
+    {
+     "nombre": "% Used",
+     "tipo": "porcentaje",
+     "formula": "=IF([Budgeted]=0,0,[Actual]/[Budgeted])"
+    }
+   ],
+   "filas": [
+    [
+     "Rent",
+     1200,
+     1200,
+     null,
+     null
+    ],
+    [
+     "Groceries",
+     400,
+     452.3,
+     null,
+     null
+    ],
+    [
+     "Transport",
+     150,
+     98,
+     null,
+     null
+    ],
+    [
+     "Leisure",
+     200,
+     260,
+     null,
+     null
+    ]
+   ],
+   "totales": [
+    {
+     "columna": "Budgeted",
+     "funcion": "SUM"
+    },
+    {
+     "columna": "Actual",
+     "funcion": "SUM"
+    },
+    {
+     "columna": "Difference",
+     "funcion": "SUM"
+    }
+   ]
+  }
+ },
+ "comprobaciones": {
+  "D3": -52.3,
+  "E5": 1.3,
+  "C6": 2010.3,
+  "D6": -60.3
+ }
+}

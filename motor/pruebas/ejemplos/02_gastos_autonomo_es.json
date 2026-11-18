@@ -1,0 +1,97 @@
+{
+ "peticion": "Gastos de autónomo de febrero con base, IVA y total: fibra 41,32, teclado 50, gestoría 60 (todo al 21%) y un libro de 30 al 4%",
+ "respuesta": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Listo: cuota de IVA y total calculados por fila, con sumas al final.",
+  "hoja": {
+   "titulo": "Gastos autónomo febrero",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "columnas": [
+    {
+     "nombre": "Fecha",
+     "tipo": "fecha"
+    },
+    {
+     "nombre": "Concepto",
+     "tipo": "texto"
+    },
+    {
+     "nombre": "Base imponible",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "IVA",
+     "tipo": "porcentaje"
+    },
+    {
+     "nombre": "Cuota IVA",
+     "tipo": "moneda",
+     "formula": "=ROUND([Base imponible]*[IVA],2)"
+    },
+    {
+     "nombre": "Total",
+     "tipo": "moneda",
+     "formula": "=[Base imponible]+[Cuota IVA]"
+    }
+   ],
+   "filas": [
+    [
+     "2026-02-02",
+     "Fibra",
+     41.32,
+     0.21,
+     null,
+     null
+    ],
+    [
+     "2026-02-05",
+     "Teclado",
+     50,
+     0.21,
+     null,
+     null
+    ],
+    [
+     "2026-02-10",
+     "Gestoría",
+     60,
+     0.21,
+     null,
+     null
+    ],
+    [
+     "2026-02-15",
+     "Libro técnico",
+     30,
+     0.04,
+     null,
+     null
+    ]
+   ],
+   "totales": [
+    {
+     "columna": "Base imponible",
+     "funcion": "SUM"
+    },
+    {
+     "columna": "Cuota IVA",
+     "funcion": "SUM"
+    },
+    {
+     "columna": "Total",
+     "funcion": "SUM"
+    }
+   ]
+  }
+ },
+ "comprobaciones": {
+  "E2": 8.68,
+  "F2": 50.0,
+  "F5": 31.2,
+  "C6": 181.32,
+  "E6": 32.98,
+  "F6": 214.3
+ }
+}

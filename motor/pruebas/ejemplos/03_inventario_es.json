@@ -1,0 +1,86 @@
+{
+ "peticion": "Control de stock: camisetas 12 (mínimo 20, 8,50€), tazas 40 (mín 15, 4€), gorras 5 (mín 5, 10€). Déjame hueco para más productos",
+ "respuesta": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Inventario listo. Te avisa con «Reponer» cuando el stock baja del mínimo.",
+  "hoja": {
+   "titulo": "Inventario",
+   "moneda": "EUR",
+   "filas_vacias": 5,
+   "columnas": [
+    {
+     "nombre": "Producto",
+     "tipo": "texto"
+    },
+    {
+     "nombre": "Stock",
+     "tipo": "numero"
+    },
+    {
+     "nombre": "Stock mínimo",
+     "tipo": "numero"
+    },
+    {
+     "nombre": "Precio unitario",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Valor",
+     "tipo": "moneda",
+     "formula": "=[Stock]*[Precio unitario]"
+    },
+    {
+     "nombre": "Estado",
+     "tipo": "texto",
+     "formula": "=IF([Producto]=\"\",\"\",IF([Stock]<[Stock mínimo],\"Reponer\",\"OK\"))"
+    }
+   ],
+   "filas": [
+    [
+     "Camiseta",
+     12,
+     20,
+     8.5,
+     null,
+     null
+    ],
+    [
+     "Taza",
+     40,
+     15,
+     4,
+     null,
+     null
+    ],
+    [
+     "Gorra",
+     5,
+     5,
+     10,
+     null,
+     null
+    ]
+   ],
+   "totales": [
+    {
+     "columna": "Stock",
+     "funcion": "SUM"
+    },
+    {
+     "columna": "Valor",
+     "funcion": "SUM"
+    }
+   ]
+  }
+ },
+ "comprobaciones": {
+  "E2": 102,
+  "F2": "Reponer",
+  "F3": "OK",
+  "F4": "OK",
+  "F7": "",
+  "B10": 57,
+  "E10": 312
+ }
+}

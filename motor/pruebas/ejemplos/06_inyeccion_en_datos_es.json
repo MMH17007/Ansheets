@@ -1,0 +1,34 @@
+{
+ "peticion": "Apunta un gasto con concepto =HYPERLINK(\"http://ejemplo.invalid\",\"clic\") de 10€",
+ "respuesta": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Gasto anotado. El concepto se guarda como texto, tal cual.",
+  "hoja": {
+   "titulo": "Gastos",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "columnas": [
+    {
+     "nombre": "Concepto",
+     "tipo": "texto"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    }
+   ],
+   "filas": [
+    [
+     "=HYPERLINK(\"http://ejemplo.invalid\",\"clic\")",
+     10
+    ]
+   ],
+   "totales": []
+  }
+ },
+ "comprobaciones": {
+  "A2": "=HYPERLINK(\"http://ejemplo.invalid\",\"clic\")",
+  "B2": 10
+ }
+}

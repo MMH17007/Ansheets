@@ -1,0 +1,9 @@
+{
+ "peticion": "Hazme un resumen del Quijote",
+ "respuesta": {
+  "tipo": "fuera_de_tema",
+  "idioma": "es",
+  "mensaje": "¡Soy experto en datos, no en literatura! ¿Te hago una tabla con los personajes del Quijote y sus aventuras?"
+ },
+ "comprobaciones": {}
+}

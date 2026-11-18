@@ -87,4 +87,4 @@ Siguiendo la regla del curso de **cuestionar suposiciones**, estos son los punto
 - [x] La prueba de 7 días **no pide tarjeta** (ver `DECISIONES.md`, D2)
 - [ ] Precio final (tras validarlo)
 - [ ] Nombre definitivo: ¿"Ansheets"?
-- [ ] Proveedor de IA para el motor (lo comparamos en T3)
+- [ ] Proveedor de IA para el motor (bloqueado: la clave de Gemini del entorno da "permiso denegado")

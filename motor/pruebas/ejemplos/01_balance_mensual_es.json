@@ -1,0 +1,100 @@
+{
+ "peticion": "Hazme el balance de enero: nómina 1800 el día 1, alquiler 650 el 3, luz 50 el 10, agua 20 el 12 y súper 210,35 el 20",
+ "respuesta": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Aquí tienes tu balance de enero con saldo acumulado y totales.",
+  "hoja": {
+   "titulo": "Balance enero 2026",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "columnas": [
+    {
+     "nombre": "Fecha",
+     "tipo": "fecha"
+    },
+    {
+     "nombre": "Concepto",
+     "tipo": "texto"
+    },
+    {
+     "nombre": "Categoría",
+     "tipo": "texto"
+    },
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=[Saldo@anterior]+[Ingreso]-[Gasto]"
+    }
+   ],
+   "filas": [
+    [
+     "2026-01-01",
+     "Nómina",
+     "Trabajo",
+     1800,
+     null,
+     null
+    ],
+    [
+     "2026-01-03",
+     "Alquiler",
+     "Vivienda",
+     null,
+     650,
+     null
+    ],
+    [
+     "2026-01-10",
+     "Luz",
+     "Suministros",
+     null,
+     50,
+     null
+    ],
+    [
+     "2026-01-12",
+     "Agua",
+     "Suministros",
+     null,
+     20,
+     null
+    ],
+    [
+     "2026-01-20",
+     "Supermercado",
+     "Alimentación",
+     null,
+     210.35,
+     null
+    ]
+   ],
+   "totales": [
+    {
+     "columna": "Ingreso",
+     "funcion": "SUM"
+    },
+    {
+     "columna": "Gasto",
+     "funcion": "SUM"
+    }
+   ]
+  }
+ },
+ "comprobaciones": {
+  "F2": 1800,
+  "F3": 1150,
+  "F6": 869.65,
+  "D7": 1800,
+  "E7": 930.35,
+  "A7": "TOTAL"
+ }
+}

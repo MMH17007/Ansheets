@@ -1,0 +1,381 @@
+{
+ "referencia_A1": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=A2-B2"
+    }
+   ],
+   "filas": [
+    [
+     100,
+     50,
+     null
+    ]
+   ]
+  }
+ },
+ "columna_inexistente": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=[Ingresos]-[Gasto]"
+    }
+   ],
+   "filas": [
+    [
+     100,
+     50,
+     null
+    ]
+   ]
+  }
+ },
+ "funcion_peligrosa_HYPERLINK": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=HYPERLINK(\"http://x\",[Ingreso])"
+    }
+   ],
+   "filas": [
+    [
+     100,
+     50,
+     null
+    ]
+   ]
+  }
+ },
+ "funcion_peligrosa_INDIRECT": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=INDIRECT(\"A1\")"
+    }
+   ],
+   "filas": [
+    [
+     100,
+     50,
+     null
+    ]
+   ]
+  }
+ },
+ "auto_referencia": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=[Saldo]+[Ingreso]"
+    }
+   ],
+   "filas": [
+    [
+     100,
+     50,
+     null
+    ]
+   ]
+  }
+ },
+ "parentesis_mal": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=ROUND([Ingreso]-[Gasto],2"
+    }
+   ],
+   "filas": [
+    [
+     100,
+     50,
+     null
+    ]
+   ]
+  }
+ },
+ "mensaje_largo": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra palabra",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=[Ingreso]-[Gasto]"
+    }
+   ],
+   "filas": [
+    [
+     100,
+     50,
+     null
+    ]
+   ]
+  }
+ },
+ "numero_como_texto": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=[Ingreso]-[Gasto]"
+    }
+   ],
+   "filas": [
+    [
+     "100 €",
+     50,
+     null
+    ]
+   ]
+  }
+ },
+ "valor_en_columna_formula": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=[Ingreso]-[Gasto]"
+    }
+   ],
+   "filas": [
+    [
+     100,
+     50,
+     50
+    ]
+   ]
+  }
+ },
+ "porcentaje_no_fraccion": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "IVA",
+     "tipo": "porcentaje"
+    }
+   ],
+   "filas": [
+    [
+     21
+    ]
+   ]
+  }
+ },
+ "fuera_de_tema_con_hoja": {
+  "tipo": "fuera_de_tema",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [],
+   "columnas": [
+    {
+     "nombre": "Ingreso",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Gasto",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Saldo",
+     "tipo": "moneda",
+     "formula": "=[Ingreso]-[Gasto]"
+    }
+   ],
+   "filas": [
+    [
+     100,
+     50,
+     null
+    ]
+   ]
+  }
+ },
+ "total_sobre_texto": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "ok",
+  "hoja": {
+   "titulo": "t",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "totales": [
+    {
+     "columna": "Concepto",
+     "funcion": "SUM"
+    }
+   ],
+   "columnas": [
+    {
+     "nombre": "Concepto",
+     "tipo": "texto"
+    }
+   ],
+   "filas": [
+    [
+     "x"
+    ]
+   ]
+  }
+ }
+}

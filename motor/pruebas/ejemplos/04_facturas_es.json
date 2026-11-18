@@ -1,0 +1,93 @@
+{
+ "peticion": "Seguimiento de facturas: F-001 a Cliente A, emitida 1/9, vence 1/10, 1200€, cobrada el 28/9; F-002 a Cliente B, emitida 1/10, vence 31/10, 850€; F-003 a Cliente C, emitida 10/11, vence 10/12, 400€",
+ "respuesta": {
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Facturas listas: estado automático y días de retraso de las vencidas sin cobrar.",
+  "hoja": {
+   "titulo": "Seguimiento de facturas",
+   "moneda": "EUR",
+   "filas_vacias": 0,
+   "columnas": [
+    {
+     "nombre": "Nº factura",
+     "tipo": "texto"
+    },
+    {
+     "nombre": "Cliente",
+     "tipo": "texto"
+    },
+    {
+     "nombre": "Fecha emisión",
+     "tipo": "fecha"
+    },
+    {
+     "nombre": "Fecha vencimiento",
+     "tipo": "fecha"
+    },
+    {
+     "nombre": "Importe",
+     "tipo": "moneda"
+    },
+    {
+     "nombre": "Fecha de cobro",
+     "tipo": "fecha"
+    },
+    {
+     "nombre": "Estado",
+     "tipo": "texto",
+     "formula": "=IF([Fecha de cobro]=\"\",\"Pendiente\",\"Cobrada\")"
+    },
+    {
+     "nombre": "Días de retraso",
+     "tipo": "numero",
+     "formula": "=IF(AND([Fecha de cobro]=\"\",TODAY()>[Fecha vencimiento]),TODAY()-[Fecha vencimiento],0)"
+    }
+   ],
+   "filas": [
+    [
+     "F-001",
+     "Cliente A",
+     "2026-09-01",
+     "2026-10-01",
+     1200,
+     "2026-09-28",
+     null,
+     null
+    ],
+    [
+     "F-002",
+     "Cliente B",
+     "2026-10-01",
+     "2026-10-31",
+     850,
+     null,
+     null,
+     null
+    ],
+    [
+     "F-003",
+     "Cliente C",
+     "2026-11-10",
+     "2026-12-10",
+     400,
+     null,
+     null,
+     null
+    ]
+   ],
+   "totales": [
+    {
+     "columna": "Importe",
+     "funcion": "SUM"
+    }
+   ]
+  }
+ },
+ "comprobaciones": {
+  "G2": "Cobrada",
+  "G3": "Pendiente",
+  "H2": 0,
+  "E5": 2450
+ }
+}
