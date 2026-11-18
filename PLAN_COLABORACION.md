@@ -83,8 +83,8 @@ Siguiendo la regla del curso de **cuestionar suposiciones**, estos son los punto
 
 ## 5. Decisiones pendientes (tuyas)
 
-- [ ] Límite gratuito: ¿10 peticiones al mes, al día o en total?
-- [ ] ¿La prueba de 7 días pide tarjeta?
+- [x] Límite gratuito: **10 peticiones al mes** (ver `DECISIONES.md`, D1)
+- [x] La prueba de 7 días **no pide tarjeta** (ver `DECISIONES.md`, D2)
 - [ ] Precio final (tras validarlo)
 - [ ] Nombre definitivo: ¿"Ansheets"?
 - [ ] Proveedor de IA para el motor (lo comparamos en T3)
