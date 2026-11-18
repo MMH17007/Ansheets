@@ -1,7 +1,7 @@
 {
   "tipo": "hoja",
   "idioma": "es",
-  "mensaje": "Aquí tienes tu hoja de gastos de enero. He incluido una columna para el total sumando ambos conceptos.",
+  "mensaje": "Aquí tienes tu tabla de gastos de enero. He calculado el total para que tengas un mejor control de tus finanzas.",
   "hoja": {
     "titulo": "Gastos de Enero",
     "moneda": "EUR",
@@ -11,7 +11,7 @@
         "tipo": "texto"
       },
       {
-        "nombre": "Importe",
+        "nombre": "Gasto",
         "tipo": "moneda"
       }
     ],
@@ -27,10 +27,10 @@
     ],
     "totales": [
       {
-        "columna": "Importe",
+        "columna": "Gasto",
         "funcion": "SUM"
       }
     ],
-    "filas_vacias": 5
+    "filas_vacias": 8
   }
 }

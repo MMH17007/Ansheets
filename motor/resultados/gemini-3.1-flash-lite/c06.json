@@ -1,22 +1,18 @@
 {
   "tipo": "hoja",
   "idioma": "es",
-  "mensaje": "Aquí tienes tu seguimiento de facturas con el cálculo automático de días de retraso para los pagos pendientes.",
+  "mensaje": "He creado tu seguimiento de facturas. Calcula automáticamente los días de retraso si la factura no está marcada como pagada.",
   "hoja": {
     "titulo": "Seguimiento de facturas",
     "moneda": "EUR",
     "columnas": [
       {
-        "nombre": "Descripción",
+        "nombre": "Factura",
         "tipo": "texto"
       },
       {
         "nombre": "Fecha de vencimiento",
         "tipo": "fecha"
-      },
-      {
-        "nombre": "Importe",
-        "tipo": "moneda"
       },
       {
         "nombre": "Estado",
@@ -25,13 +21,13 @@
       {
         "nombre": "Días de retraso",
         "tipo": "numero",
-        "formula": "=IF([Estado]=\"Pendiente\",IF(TODAY()>[Fecha de vencimiento],TODAY()-[Fecha de vencimiento],0),0)"
+        "formula": "=IF([Estado]<>\"Pagada\",IF(TODAY()>[Fecha de vencimiento],TODAY()-[Fecha de vencimiento],0),0)"
       }
     ],
     "filas": [],
     "totales": [
       {
-        "columna": "Importe",
+        "columna": "Días de retraso",
         "funcion": "SUM"
       }
     ],

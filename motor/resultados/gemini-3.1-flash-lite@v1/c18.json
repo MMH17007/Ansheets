@@ -1,0 +1,36 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "He preparado una lista para controlar tus facturas. La columna 'Estado' marcará automáticamente si la factura lleva más de 30 días vencida.",
+  "hoja": {
+    "titulo": "Seguimiento de facturas vencidas",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Factura",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Fecha de vencimiento",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Importe",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Estado",
+        "tipo": "texto",
+        "formula": "=IF(TODAY()-[Fecha de vencimiento]>30,\"Vencida más de 30 días\",\"OK\")"
+      }
+    ],
+    "filas": [],
+    "totales": [
+      {
+        "columna": "Importe",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 10
+  }
+}

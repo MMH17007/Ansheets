@@ -37,3 +37,22 @@ Cada decisión indica quién la tomó, por qué y qué consecuencias tiene. Sirv
 - **Fecha:** 2026-11-18 · **Decide:** el director de producto
 - Se responde en el idioma del usuario. Si escribe en otro idioma, se responde en inglés y se avisa de que por ahora solo hay español e inglés.
 - Moneda por defecto: EUR en español y USD en inglés, salvo que el usuario indique otra (EUR, USD o GBP).
+
+## D6 · Prueba de modelos de Gemini (nivel gratuito)
+- **Fecha:** 2026-11-18 · **Decide:** el director de producto (empezar por Gemini, que es gratis)
+- **Resultados con el prompt v1:** 3.1 Flash-Lite superó 16 de 20 casos (0,73 $ cada 1.000 peticiones en el plan de pago); 3.5 Flash-Lite, 12 de 20 (1,02 $).
+- **Descartados:** 2.5 Flash-Lite (Google ya no lo ofrece a usuarios nuevos) y 3.8 Flash (servidores saturados: solo respondió 2 de 12 peticiones en una hora).
+- **Corrección de Claude:** la prueba del caso c02 era demasiado estricta (exigía "gasto" en una columna aunque el título fuera "Gastos de Enero"). Se corrigió.
+
+## D7 · Prompt v2 y elección del modelo más barato
+- **Fecha:** 2026-11-18 · **Decide:** el director de producto ("mejora el prompt y repite con el más barato")
+- **Cambios en el prompt:**
+  - Sin campo `hoja` cuando la respuesta no es una hoja.
+  - El idioma lo decide el usuario.
+  - No inventar fechas ni otros datos.
+  - Ingreso/Gasto/Saldo en los balances y Presupuestado/Real/Diferencia en los presupuestos.
+  - Divisiones protegidas.
+  - Columnas con fórmula siempre a null.
+- **Resultado con Gemini 3.1 Flash-Lite:** de **16/20 a 18/20**, sin fallos de seguridad.
+- **Coste:** igual (0,74 $ cada 1.000 peticiones): el prompt es más largo (+30 % de tokens de entrada), pero las respuestas son más cortas.
+- **Velocidad:** pasa de 1,4 a 2,2 s de mediana.

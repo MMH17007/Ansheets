@@ -1,0 +1,48 @@
+{
+  "tipo": "aclaracion",
+  "idioma": "es",
+  "mensaje": "¡Claro! Puedo ayudarte a gestionar tus finanzas. ¿Prefieres una hoja para registrar tus gastos, gestionar un presupuesto mensual o controlar tus ahorros?",
+  "hoja": {
+    "titulo": "Gestión de Finanzas Personales",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Fecha",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Concepto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Categoría",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Ingreso",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Gasto",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Saldo",
+        "tipo": "moneda",
+        "formula": "=[Saldo@anterior]+[Ingreso]-[Gasto]"
+      }
+    ],
+    "filas": [],
+    "totales": [
+      {
+        "columna": "Ingreso",
+        "funcion": "SUM"
+      },
+      {
+        "columna": "Gasto",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 10
+  }
+}

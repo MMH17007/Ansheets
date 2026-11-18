@@ -1,7 +1,7 @@
 {
   "tipo": "hoja",
   "idioma": "en",
-  "mensaje": "I've created your monthly budget with the expenses provided. You can add more rows as needed.",
+  "mensaje": "I've created your monthly budget with your specified expenses. You can add more categories or income as needed.",
   "hoja": {
     "titulo": "Monthly Budget",
     "moneda": "USD",

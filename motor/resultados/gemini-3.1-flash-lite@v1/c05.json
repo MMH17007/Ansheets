@@ -1,0 +1,36 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "He preparado una tabla de stock con una alerta automática para cuando las existencias bajen del mínimo definido.",
+  "hoja": {
+    "titulo": "Control de Stock",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Producto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Stock actual",
+        "tipo": "numero"
+      },
+      {
+        "nombre": "Stock mínimo",
+        "tipo": "numero"
+      },
+      {
+        "nombre": "Estado",
+        "tipo": "texto",
+        "formula": "=IF([Stock actual]<=[Stock mínimo],\"Reponer\",\"OK\")"
+      }
+    ],
+    "filas": [],
+    "totales": [
+      {
+        "columna": "Stock actual",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 10
+  }
+}

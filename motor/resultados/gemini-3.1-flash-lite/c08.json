@@ -1,17 +1,17 @@
 {
   "tipo": "hoja",
   "idioma": "en",
-  "mensaje": "I've created your bakery inventory tracker. Items with stock below the minimum will show a reorder alert.",
+  "mensaje": "I have created your bakery inventory tracker with an automatic reorder alert.",
   "hoja": {
     "titulo": "Bakery Inventory Tracker",
     "moneda": "USD",
     "columnas": [
       {
-        "nombre": "Ingredient",
+        "nombre": "Item",
         "tipo": "texto"
       },
       {
-        "nombre": "Current Stock",
+        "nombre": "Stock",
         "tipo": "numero"
       },
       {
@@ -21,11 +21,16 @@
       {
         "nombre": "Status",
         "tipo": "texto",
-        "formula": "=IF([Current Stock]<[Minimum Stock],\"Reorder\",\"OK\")"
+        "formula": "=IF([Stock]<[Minimum Stock],\"REORDER\",\"OK\")"
       }
     ],
     "filas": [],
-    "totales": [],
-    "filas_vacias": 15
+    "totales": [
+      {
+        "columna": "Stock",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 10
   }
 }

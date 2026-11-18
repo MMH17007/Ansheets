@@ -1,18 +1,18 @@
 {
   "tipo": "hoja",
   "idioma": "es",
-  "mensaje": "Aquí tienes tu balance de enero con tus gastos e ingresos registrados.",
+  "mensaje": "Aquí tienes tu balance de enero organizado con ingresos, gastos y saldo acumulado.",
   "hoja": {
     "titulo": "Balance de Enero 2026",
     "moneda": "EUR",
     "columnas": [
       {
-        "nombre": "Concepto",
-        "tipo": "texto"
-      },
-      {
         "nombre": "Fecha",
         "tipo": "fecha"
+      },
+      {
+        "nombre": "Concepto",
+        "tipo": "texto"
       },
       {
         "nombre": "Ingreso",
@@ -29,10 +29,10 @@
       }
     ],
     "filas": [
-      ["Nómina", "2026-01-01", 1800, 0, null],
-      ["Alquiler", "2026-01-05", 0, 650, null],
-      ["Luz", "2026-01-10", 0, 50, null],
-      ["Agua", "2026-01-15", 0, 20, null]
+      ["2026-01-01", "Nómina", 1800, 0, null],
+      ["2026-01-01", "Alquiler", 0, 650, null],
+      ["2026-01-01", "Luz", 0, 50, null],
+      ["2026-01-01", "Agua", 0, 20, null]
     ],
     "totales": [
       {
@@ -42,10 +42,6 @@
       {
         "columna": "Gasto",
         "funcion": "SUM"
-      },
-      {
-        "columna": "Saldo",
-        "funcion": "MAX"
       }
     ],
     "filas_vacias": 5

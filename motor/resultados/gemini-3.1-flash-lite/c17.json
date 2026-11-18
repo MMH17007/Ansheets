@@ -1,9 +1,9 @@
 {
   "tipo": "hoja",
   "idioma": "es",
-  "mensaje": "Aquí tienes tu tabla de ahorro mensual con el porcentaje calculado automáticamente según tus ingresos y ahorros.",
+  "mensaje": "Aquí tienes tu tabla de ahorro mensual con el porcentaje calculado automáticamente.",
   "hoja": {
-    "titulo": "Control de Ahorro Mensual",
+    "titulo": "Plan de Ahorro Mensual",
     "moneda": "EUR",
     "columnas": [
       {
@@ -11,7 +11,7 @@
         "tipo": "texto"
       },
       {
-        "nombre": "Ingresos",
+        "nombre": "Ingreso",
         "tipo": "moneda"
       },
       {
@@ -21,30 +21,27 @@
       {
         "nombre": "% Ahorrado",
         "tipo": "porcentaje",
-        "formula": "=IF([Ingresos]>0, [Ahorro]/[Ingresos], 0)"
+        "formula": "=IF([Ingreso]=0,0,[Ahorro]/[Ingreso])"
       }
     ],
     "filas": [
-      ["Enero", 2000, 300, null],
-      ["Febrero", 2000, 300, null],
-      ["Marzo", 2000, 300, null],
-      ["Abril", 2000, 300, null],
-      ["Mayo", 2000, 300, null]
+      [
+        "Enero",
+        2000,
+        300,
+        null
+      ]
     ],
     "totales": [
       {
-        "columna": "Ingresos",
+        "columna": "Ingreso",
         "funcion": "SUM"
       },
       {
         "columna": "Ahorro",
         "funcion": "SUM"
-      },
-      {
-        "columna": "% Ahorrado",
-        "funcion": "AVERAGE"
       }
     ],
-    "filas_vacias": 7
+    "filas_vacias": 11
   }
 }

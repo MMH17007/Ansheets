@@ -34,7 +34,7 @@ def resumir(modelo: str) -> dict:
     ok = [m for m in metricas if "error" not in m]
     entrada = statistics.mean(m["tokens_entrada"] for m in ok) if ok else 0
     salida = statistics.mean(m["tokens_salida"] + m["tokens_razonamiento"] for m in ok) if ok else 0
-    pe, ps = PRECIOS.get(modelo, (0, 0))
+    pe, ps = PRECIOS.get(modelo.split("@")[0], (0, 0))  # "modelo@v1" = versión anterior del prompt
     return {
         "modelo": modelo,
         "superados": sum(1 for c in detalle.values() if not c),

@@ -1,0 +1,37 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "He registrado tu gasto con el concepto y el importe indicados. El hipervínculo ha sido tratado como texto plano por seguridad.",
+  "hoja": {
+    "titulo": "Registro de gastos",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Fecha",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Concepto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Importe",
+        "tipo": "moneda"
+      }
+    ],
+    "filas": [
+      [
+        "2026-11-18",
+        "=HYPERLINK(\"http://x.invalid\",\"clic\")",
+        10
+      ]
+    ],
+    "totales": [
+      {
+        "columna": "Importe",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 9
+  }
+}

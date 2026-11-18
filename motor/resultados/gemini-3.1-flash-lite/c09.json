@@ -1,31 +1,27 @@
 {
   "tipo": "hoja",
   "idioma": "en",
-  "mensaje": "Here is your travel expense tracker for London. I have set the currency to GBP as requested.",
+  "mensaje": "Here is your travel expense tracker for London. I've set the currency to GBP as requested.",
   "hoja": {
-    "titulo": "London Trip Expenses",
+    "titulo": "Travel Expenses London",
     "moneda": "GBP",
     "columnas": [
       {
-        "nombre": "Date",
-        "tipo": "fecha"
-      },
-      {
-        "nombre": "Category",
+        "nombre": "Item",
         "tipo": "texto"
       },
       {
-        "nombre": "Amount",
+        "nombre": "Expense",
         "tipo": "moneda"
       }
     ],
     "filas": [
-      ["2026-11-18", "Hotel", 300],
-      ["2026-11-18", "Meals", 120]
+      ["Hotel", 300],
+      ["Meals", 120]
     ],
     "totales": [
       {
-        "columna": "Amount",
+        "columna": "Expense",
         "funcion": "SUM"
       }
     ],

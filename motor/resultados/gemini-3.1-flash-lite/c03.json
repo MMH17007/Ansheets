@@ -1,7 +1,7 @@
 {
   "tipo": "hoja",
   "idioma": "es",
-  "mensaje": "Aquí tienes tu plantilla para organizar tus gastos e ingresos de este mes. ¡Espero que te ayude a controlar tus finanzas!",
+  "mensaje": "Aquí tienes tu plantilla mensual de finanzas. He incluido una columna para el saldo acumulado automático.",
   "hoja": {
     "titulo": "Finanzas Personales Noviembre 2026",
     "moneda": "EUR",
@@ -11,11 +11,7 @@
         "tipo": "fecha"
       },
       {
-        "nombre": "Concepto",
-        "tipo": "texto"
-      },
-      {
-        "nombre": "Categoría",
+        "nombre": "Descripción",
         "tipo": "texto"
       },
       {
@@ -43,6 +39,6 @@
         "funcion": "SUM"
       }
     ],
-    "filas_vacias": 10
+    "filas_vacias": 15
   }
 }

@@ -1,0 +1,36 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Aquí tienes tu hoja de gastos de enero. He incluido una columna para el total sumando ambos conceptos.",
+  "hoja": {
+    "titulo": "Gastos de Enero",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Concepto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Importe",
+        "tipo": "moneda"
+      }
+    ],
+    "filas": [
+      [
+        "Luz",
+        50
+      ],
+      [
+        "Agua",
+        20
+      ]
+    ],
+    "totales": [
+      {
+        "columna": "Importe",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 5
+  }
+}

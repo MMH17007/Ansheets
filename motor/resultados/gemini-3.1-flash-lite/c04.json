@@ -1,9 +1,9 @@
 {
   "tipo": "hoja",
   "idioma": "es",
-  "mensaje": "Aquí tienes tu registro de gastos de autónomo. He calculado el IVA del 21% y el total automáticamente.",
+  "mensaje": "Aquí tienes tu tabla de gastos con cálculo de IVA al 21%.",
   "hoja": {
-    "titulo": "Gastos de Autónomo",
+    "titulo": "Gastos de autónomo",
     "moneda": "EUR",
     "columnas": [
       {
@@ -11,24 +11,43 @@
         "tipo": "texto"
       },
       {
-        "nombre": "Base Imponible",
+        "nombre": "Base imponible",
         "tipo": "moneda"
       },
       {
-        "nombre": "IVA",
-        "tipo": "porcentaje"
+        "nombre": "IVA (21%)",
+        "tipo": "moneda",
+        "formula": "=[Base imponible]*0.21"
       },
       {
         "nombre": "Total",
         "tipo": "moneda",
-        "formula": "=[Base Imponible]*(1+[IVA])"
+        "formula": "=[Base imponible]+[IVA (21%)]"
       }
     ],
     "filas": [
-      ["Hosting", 10, 0.21, null],
-      ["Móvil", 25, 0.21, null]
+      [
+        "Hosting",
+        10,
+        null,
+        null
+      ],
+      [
+        "Móvil",
+        25,
+        null,
+        null
+      ]
     ],
     "totales": [
+      {
+        "columna": "Base imponible",
+        "funcion": "SUM"
+      },
+      {
+        "columna": "IVA (21%)",
+        "funcion": "SUM"
+      },
       {
         "columna": "Total",
         "funcion": "SUM"

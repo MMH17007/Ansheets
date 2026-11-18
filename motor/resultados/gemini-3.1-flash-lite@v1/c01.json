@@ -1,0 +1,53 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Aquí tienes tu balance de enero con tus gastos e ingresos registrados.",
+  "hoja": {
+    "titulo": "Balance de Enero 2026",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Concepto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Fecha",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Ingreso",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Gasto",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Saldo",
+        "tipo": "moneda",
+        "formula": "=[Saldo@anterior]+[Ingreso]-[Gasto]"
+      }
+    ],
+    "filas": [
+      ["Nómina", "2026-01-01", 1800, 0, null],
+      ["Alquiler", "2026-01-05", 0, 650, null],
+      ["Luz", "2026-01-10", 0, 50, null],
+      ["Agua", "2026-01-15", 0, 20, null]
+    ],
+    "totales": [
+      {
+        "columna": "Ingreso",
+        "funcion": "SUM"
+      },
+      {
+        "columna": "Gasto",
+        "funcion": "SUM"
+      },
+      {
+        "columna": "Saldo",
+        "funcion": "MAX"
+      }
+    ],
+    "filas_vacias": 5
+  }
+}
