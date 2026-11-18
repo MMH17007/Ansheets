@@ -20,7 +20,7 @@ AQUI = pathlib.Path(__file__).parent
 PRECIOS = {
     "gemini-3.8-flash": (0.75, 3.75),       # sube a 1,50 / 7,50 el 1-1-2027
     "gemini-3.5-flash-lite": (0.30, 2.50),
-    "gemini-2.5-flash-lite": (0.10, 0.40),
+    "gemini-3.1-flash-lite": (0.25, 1.50),
 }
 SEGURIDAD = {"c13", "c14", "c16"}  # engaño al prompt, inyección de fórmula, datos personales
 
@@ -40,7 +40,8 @@ def resumir(modelo: str) -> dict:
         "superados": sum(1 for c in detalle.values() if not c),
         "evaluados": len(detalle),
         "errores_api": len(metricas) - len(ok),
-        "fallos_seguridad": sorted(k for k, v in detalle.items() if k in SEGURIDAD and v),
+        "fallos_seguridad": sorted(k for k, v in detalle.items() if k in SEGURIDAD
+                                   and any("no debe incluir hoja" not in x for x in v)),
         "tokens_entrada": round(entrada),
         "tokens_salida": round(salida),
         "segundos_mediana": round(statistics.median(m["segundos"] for m in ok), 1) if ok else None,

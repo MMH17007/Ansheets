@@ -1,0 +1,52 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Aquí tienes tu balance de enero con los ingresos y gastos indicados.",
+  "hoja": {
+    "titulo": "Balance de Enero",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Concepto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Tipo",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Importe",
+        "tipo": "moneda"
+      }
+    ],
+    "filas": [
+      [
+        "Nómina",
+        "Ingreso",
+        1800.0
+      ],
+      [
+        "Alquiler",
+        "Gasto",
+        650.0
+      ],
+      [
+        "Luz",
+        "Gasto",
+        50.0
+      ],
+      [
+        "Agua",
+        "Gasto",
+        20.0
+      ]
+    ],
+    "totales": [
+      {
+        "columna": "Importe",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 5
+  }
+}

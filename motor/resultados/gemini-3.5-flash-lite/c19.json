@@ -1,0 +1,30 @@
+{
+  "tipo": "hoja",
+  "idioma": "en",
+  "mensaje": "I currently work in Spanish and English. I have created your expense table!",
+  "hoja": {
+    "titulo": "Expense Tracker",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Expense",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Amount",
+        "tipo": "moneda"
+      }
+    ],
+    "filas": [
+      ["Rent", 800],
+      ["Groceries", 300]
+    ],
+    "totales": [
+      {
+        "columna": "Amount",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 5
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "tipo": "hoja",
+  "idioma": "en",
+  "mensaje": "Here is your invoice tracking sheet with a formula to alert you if they are more than 30 days overdue.",
+  "hoja": {
+    "titulo": "Invoice Tracking",
+    "moneda": "USD",
+    "columnas": [
+      {
+        "nombre": "Invoice Number",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Client",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Amount",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Due Date",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Status",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Days Overdue",
+        "tipo": "numero",
+        "formula": "=TODAY()-[Due Date]"
+      },
+      {
+        "nombre": "Alert",
+        "tipo": "texto",
+        "formula": "=IF([Days Overdue]>30,\"Overdue >30 days\",\"OK\")"
+      }
+    ],
+    "filas": [],
+    "totales": [
+      {
+        "columna": "Amount",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 10
+  }
+}

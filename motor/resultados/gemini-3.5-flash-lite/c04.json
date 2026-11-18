@@ -1,0 +1,53 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "He calculado automáticamente el IVA y el total de tus gastos de autónomo.",
+  "hoja": {
+    "titulo": "Gastos de Autónomo",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Concepto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Base imponible",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "IVA",
+        "tipo": "porcentaje"
+      },
+      {
+        "nombre": "Total",
+        "tipo": "moneda",
+        "formula": "=[Base imponible]*(1+[IVA])"
+      }
+    ],
+    "filas": [
+      [
+        "hosting",
+        10,
+        0.21,
+        null
+      ],
+      [
+        "móvil",
+        25,
+        0.21,
+        null
+      ]
+    ],
+    "totales": [
+      {
+        "columna": "Base imponible",
+        "funcion": "SUM"
+      },
+      {
+        "columna": "Total",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 5
+  }
+}

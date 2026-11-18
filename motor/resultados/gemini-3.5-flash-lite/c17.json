@@ -1,0 +1,51 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Aquí tienes tu tabla de ahorro mensual con el cálculo automático del porcentaje ahorrado.",
+  "hoja": {
+    "titulo": "Ahorro Mensual",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Mes",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Ingreso",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Ahorro",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "% Ahorrado",
+        "tipo": "porcentaje",
+        "formula": "=[Ahorro]/[Ingreso]"
+      }
+    ],
+    "filas": [
+      [
+        "Enero",
+        2000,
+        300,
+        null
+      ]
+    ],
+    "totales": [
+      {
+        "columna": "Ingreso",
+        "funcion": "SUM"
+      },
+      {
+        "columna": "Ahorro",
+        "funcion": "SUM"
+      },
+      {
+        "columna": "% Ahorrado",
+        "funcion": "AVERAGE"
+      }
+    ],
+    "filas_vacias": 11
+  }
+}

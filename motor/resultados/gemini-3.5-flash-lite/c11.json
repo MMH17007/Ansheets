@@ -1,0 +1,26 @@
+{
+  "tipo": "fuera_de_tema",
+  "idioma": "es",
+  "mensaje": "¡Soy experto en datos y finanzas, no en literatura! ¿Quieres que te cree una tabla con los personajes principales del Quijote y sus aventuras?",
+  "hoja": {
+    "titulo": "Personajes de Don Quijote",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Personaje",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Rol",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Apariciones",
+        "tipo": "numero"
+      }
+    ],
+    "filas": [],
+    "totales": [],
+    "filas_vacias": 5
+  }
+}

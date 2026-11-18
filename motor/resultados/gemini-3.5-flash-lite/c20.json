@@ -1,0 +1,13 @@
+{
+  "tipo": "fuera_de_tema",
+  "idioma": "es",
+  "mensaje": "¡No tengo gracia para los chistes, pero te puedo hacer una tabla con los mejores chistes y sus puntuaciones! ¿Te apetece?",
+  "hoja": {
+    "titulo": "",
+    "moneda": "EUR",
+    "columnas": [],
+    "filas": [],
+    "totales": [],
+    "filas_vacias": 0
+  }
+}

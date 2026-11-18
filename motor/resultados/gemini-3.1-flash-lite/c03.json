@@ -1,0 +1,48 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Aquí tienes tu plantilla para organizar tus gastos e ingresos de este mes. ¡Espero que te ayude a controlar tus finanzas!",
+  "hoja": {
+    "titulo": "Finanzas Personales Noviembre 2026",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Fecha",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Concepto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Categoría",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Ingreso",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Gasto",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Saldo",
+        "tipo": "moneda",
+        "formula": "=[Saldo@anterior]+[Ingreso]-[Gasto]"
+      }
+    ],
+    "filas": [],
+    "totales": [
+      {
+        "columna": "Ingreso",
+        "funcion": "SUM"
+      },
+      {
+        "columna": "Gasto",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 10
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "tipo": "hoja",
+  "idioma": "en",
+  "mensaje": "Here is your bakery inventory tracker with a reorder alert!",
+  "hoja": {
+    "titulo": "Bakery Inventory Tracker",
+    "moneda": "USD",
+    "columnas": [
+      {
+        "nombre": "Item",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Stock",
+        "tipo": "numero"
+      },
+      {
+        "nombre": "Minimum Stock",
+        "tipo": "numero"
+      },
+      {
+        "nombre": "Status",
+        "tipo": "texto",
+        "formula": "=IF([Stock]<[Minimum Stock],\"Reorder\",\"OK\")"
+      }
+    ],
+    "filas": [
+      ["Flour (kg)", 15, 20, null],
+      ["Sugar (kg)", 30, 10, null],
+      ["Butter (kg)", 5, 8, null],
+      ["Eggs (dozen)", 12, 10, null],
+      ["Chocolate (kg)", 4, 5, null]
+    ],
+    "totales": [
+      {
+        "columna": "Stock",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 5
+  }
+}

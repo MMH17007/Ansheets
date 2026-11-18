@@ -1,0 +1,52 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Aquí tienes tu plantilla para el seguimiento de facturas pendientes y días de retraso.",
+  "hoja": {
+    "titulo": "Seguimiento de Facturas",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Factura",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Cliente",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Importe",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Fecha de emisión",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Fecha de vencimiento",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Estado",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Días de retraso",
+        "tipo": "numero",
+        "formula": "=IF([Estado]=\"Pendiente\",TODAY()-[Fecha de vencimiento],0)"
+      }
+    ],
+    "filas": [],
+    "totales": [
+      {
+        "columna": "Importe",
+        "funcion": "SUM"
+      },
+      {
+        "columna": "Días de retraso",
+        "funcion": "MAX"
+      }
+    ],
+    "filas_vacias": 10
+  }
+}

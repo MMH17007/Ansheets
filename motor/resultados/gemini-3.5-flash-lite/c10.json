@@ -1,0 +1,13 @@
+{
+  "tipo": "aclaracion",
+  "idioma": "en",
+  "mensaje": "Could you please tell me what kind of table you need? For example, an expense tracker, a project budget, or a task list?",
+  "hoja": {
+    "titulo": "",
+    "moneda": "USD",
+    "columnas": [],
+    "filas": [],
+    "totales": [],
+    "filas_vacias": 0
+  }
+}

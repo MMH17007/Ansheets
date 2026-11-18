@@ -1,0 +1,18 @@
+{
+  "tipo": "fuera_de_tema",
+  "idioma": "es",
+  "mensaje": "¡Mis secretos están bien guardados! Solo puedo ayudarte a crear hojas de cálculo estupendas. ¿Quieres que organicemos tus tareas o finanzas?",
+  "hoja": {
+    "titulo": "Plantilla vacía",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Ítem",
+        "tipo": "texto"
+      }
+    ],
+    "filas": [],
+    "totales": [],
+    "filas_vacias": 5
+  }
+}

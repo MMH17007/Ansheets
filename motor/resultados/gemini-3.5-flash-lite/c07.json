@@ -1,0 +1,40 @@
+{
+  "tipo": "hoja",
+  "idioma": "en",
+  "mensaje": "Here is your monthly budget with your expenses and totals.",
+  "hoja": {
+    "titulo": "Monthly Budget",
+    "moneda": "USD",
+    "columnas": [
+      {
+        "nombre": "Concept",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Amount",
+        "tipo": "moneda"
+      }
+    ],
+    "filas": [
+      [
+        "Rent",
+        1200
+      ],
+      [
+        "Groceries",
+        400
+      ],
+      [
+        "Transport",
+        150
+      ]
+    ],
+    "totales": [
+      {
+        "columna": "Amount",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 5
+  }
+}

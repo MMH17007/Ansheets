@@ -1,0 +1,36 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Aquí tienes tu plantilla de control de stock con alertas automáticas.",
+  "hoja": {
+    "titulo": "Control de Stock",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Producto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Stock Actual",
+        "tipo": "numero"
+      },
+      {
+        "nombre": "Stock Mínimo",
+        "tipo": "numero"
+      },
+      {
+        "nombre": "Estado",
+        "tipo": "texto",
+        "formula": "=IF([Stock Actual]<[Stock Mínimo],\"Reponer\",\"OK\")"
+      }
+    ],
+    "filas": [],
+    "totales": [
+      {
+        "columna": "Stock Actual",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 10
+  }
+}

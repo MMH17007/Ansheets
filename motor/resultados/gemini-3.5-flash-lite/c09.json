@@ -1,0 +1,30 @@
+{
+  "tipo": "hoja",
+  "idioma": "en",
+  "mensaje": "Here is your expense sheet for your trip to London in British Pounds (GBP).",
+  "hoja": {
+    "titulo": "London Trip Expenses",
+    "moneda": "GBP",
+    "columnas": [
+      {
+        "nombre": "Expense",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Amount",
+        "tipo": "moneda"
+      }
+    ],
+    "filas": [
+      ["Hotel", 300],
+      ["Meals", 120]
+    ],
+    "totales": [
+      {
+        "columna": "Amount",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 5
+  }
+}

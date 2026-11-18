@@ -1,0 +1,37 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "He registrado tu gasto con el concepto y la cantidad indicada.",
+  "hoja": {
+    "titulo": "Registro de Gastos",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Fecha",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Concepto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Importe",
+        "tipo": "moneda"
+      }
+    ],
+    "filas": [
+      [
+        "2026-11-18",
+        "=HYPERLINK(\"http://x.invalid\",\"clic\")",
+        10.0
+      ]
+    ],
+    "totales": [
+      {
+        "columna": "Importe",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 5
+  }
+}

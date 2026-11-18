@@ -1,0 +1,40 @@
+{
+  "tipo": "hoja",
+  "idioma": "es",
+  "mensaje": "Aquí tienes tu plantilla de finanzas personales lista para rellenar los gastos e ingresos del mes.",
+  "hoja": {
+    "titulo": "Finanzas Personales",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Fecha",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Concepto",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Tipo",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Cantidad",
+        "tipo": "moneda"
+      },
+      {
+        "nombre": "Saldo",
+        "tipo": "moneda",
+        "formula": "=[Saldo@anterior]+[Cantidad]"
+      }
+    ],
+    "filas": [],
+    "totales": [
+      {
+        "columna": "Cantidad",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 10
+  }
+}
