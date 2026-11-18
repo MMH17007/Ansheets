@@ -132,12 +132,12 @@ def evaluar_respuestas(directorio: pathlib.Path, detalle: dict | None = None) ->
             p.append(f"idioma {resp.get('idioma')!r}, esperado {exp['idioma']!r}")
         hoja = resp.get("hoja") or {}
         cols = hoja.get("columnas") or []
-        nombres = " ".join(c.get("nombre", "").lower() for c in cols)
+        nombres = " ".join([hoja.get("titulo", "")] + [c.get("nombre", "") for c in cols]).lower()
         if exp.get("requiere_formula") and hoja and not any(c.get("formula") for c in cols):
             p.append("no tiene ninguna fórmula")
         for palabra in exp.get("columnas_contienen", []):
             if hoja and palabra not in nombres:
-                p.append(f"ninguna columna contiene «{palabra}»")
+                p.append(f"ni el título ni las columnas contienen «{palabra}»")
         if "moneda" in exp and hoja and hoja.get("moneda") != exp["moneda"]:
             p.append(f"moneda {hoja.get('moneda')!r}, esperada {exp['moneda']!r}")
         if exp.get("sin_datos_inventados") and hoja and hoja.get("filas"):

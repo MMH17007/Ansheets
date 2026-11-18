@@ -1,0 +1,31 @@
+{
+  "tipo": "hoja",
+  "idioma": "en",
+  "mensaje": "I've created your monthly budget with the expenses provided. You can add more rows as needed.",
+  "hoja": {
+    "titulo": "Monthly Budget",
+    "moneda": "USD",
+    "columnas": [
+      {
+        "nombre": "Category",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Amount",
+        "tipo": "moneda"
+      }
+    ],
+    "filas": [
+      ["Rent", 1200],
+      ["Groceries", 400],
+      ["Transport", 150]
+    ],
+    "totales": [
+      {
+        "columna": "Amount",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 10
+  }
+}

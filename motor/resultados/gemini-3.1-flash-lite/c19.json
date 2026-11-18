@@ -1,0 +1,34 @@
+{
+  "tipo": "hoja",
+  "idioma": "en",
+  "mensaje": "I have created your expense sheet for November. I only work in English and Spanish for now.",
+  "hoja": {
+    "titulo": "Expenses November 2026",
+    "moneda": "USD",
+    "columnas": [
+      {
+        "nombre": "Date",
+        "tipo": "fecha"
+      },
+      {
+        "nombre": "Description",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Amount",
+        "tipo": "moneda"
+      }
+    ],
+    "filas": [
+      ["2026-11-18", "Loyer", 800.0],
+      ["2026-11-18", "Courses", 300.0]
+    ],
+    "totales": [
+      {
+        "columna": "Amount",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 8
+  }
+}

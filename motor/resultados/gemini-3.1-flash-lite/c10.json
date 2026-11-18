@@ -1,0 +1,27 @@
+{
+  "tipo": "aclaracion",
+  "idioma": "es",
+  "mensaje": "¿Qué tipo de tabla necesitas? Puedo ayudarte con una de gastos personales, control de tareas, inventario o seguimiento de ventas. ¿Cuál prefieres?",
+  "hoja": {
+    "titulo": "Tabla vacía",
+    "moneda": "EUR",
+    "columnas": [
+      {
+        "nombre": "Descripción",
+        "tipo": "texto"
+      },
+      {
+        "nombre": "Valor",
+        "tipo": "numero"
+      }
+    ],
+    "filas": [],
+    "totales": [
+      {
+        "columna": "Valor",
+        "funcion": "SUM"
+      }
+    ],
+    "filas_vacias": 10
+  }
+}
