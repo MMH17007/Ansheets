@@ -1,2 +1,4 @@
 __pycache__/
 motor/salidas/recalculado/
+motor/resultados_log.txt
+motor/resultados/*/excel/

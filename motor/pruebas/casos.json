@@ -10,7 +10,8 @@
     "ingreso",
     "gasto",
     "saldo"
-   ]
+   ],
+   "sin_fechas_inventadas": true
   }
  },
  {
@@ -25,7 +26,8 @@
    "texto_corregido": [
     "Luz",
     "Agua"
-   ]
+   ],
+   "sin_fechas_inventadas": true
   }
  },
  {
@@ -80,7 +82,8 @@
    "tipo": "hoja",
    "idioma": "en",
    "requiere_formula": true,
-   "moneda": "USD"
+   "moneda": "USD",
+   "sin_fechas_inventadas": true
   }
  },
  {

@@ -97,9 +97,19 @@ def _texto(resp: dict) -> str:
     return json.dumps(resp, ensure_ascii=False)
 
 
-def evaluar_respuestas(directorio: pathlib.Path) -> int:
+def errores_al_recalcular(resp: dict, ruta: pathlib.Path) -> list[str]:
+    """Exporta la hoja a Excel, la recalcula con LibreOffice y busca celdas con error."""
+    a_excel(resp, str(ruta))
+    ws = load_workbook(recalcular(ruta), data_only=True).active
+    return [f"{c.coordinate}={c.value}" for fila in ws.iter_rows() for c in fila
+            if isinstance(c.value, str) and c.value.startswith(ERRORES_EXCEL)]
+
+
+def evaluar_respuestas(directorio: pathlib.Path, detalle: dict | None = None) -> int:
     casos = json.loads((PRUEBAS / "casos.json").read_text(encoding="utf-8"))
     fallos = 0
+    excel_dir = directorio / "excel"
+    excel_dir.mkdir(exist_ok=True)
     for caso in casos:
         archivo = directorio / f"{caso['id']}.json"
         if not archivo.exists():
@@ -109,6 +119,8 @@ def evaluar_respuestas(directorio: pathlib.Path) -> int:
             resp = json.loads(archivo.read_text(encoding="utf-8"))
         except json.JSONDecodeError as e:
             print(f"✗ {caso['id']}: no es JSON válido ({e})")
+            if detalle is not None:
+                detalle[caso["id"]] = [f"no es JSON válido ({e})"]
             fallos += 1
             continue
         exp = caso["esperado"]
@@ -142,8 +154,20 @@ def evaluar_respuestas(directorio: pathlib.Path) -> int:
             for t in exp["tipos_columna"]:
                 if t not in {c.get("tipo") for c in cols}:
                     p.append(f"falta una columna de tipo {t}")
+        if exp.get("sin_fechas_inventadas") and hoja:
+            for i, c in enumerate(cols):
+                if c.get("tipo") == "fecha" and any(len(f) > i and f[i] for f in hoja.get("filas") or []):
+                    p.append(f"inventó fechas en «{c.get('nombre')}»")
+        if resp.get("tipo") == "hoja" and not validar(resp):
+            try:
+                p += [f"fórmula con error al recalcular: {e}" for e in
+                      errores_al_recalcular(resp, excel_dir / f"{caso['id']}.xlsx")]
+            except Exception as e:
+                p.append(f"no se pudo exportar a Excel: {e}")
         if "celda_texto_literal" in exp and exp["celda_texto_literal"] not in _texto(hoja.get("filas")):
             p.append("no conservó el texto literal")
+        if detalle is not None:
+            detalle[caso["id"]] = p
         if p:
             print(f"✗ {caso['id']}: {p}")
             fallos += 1
